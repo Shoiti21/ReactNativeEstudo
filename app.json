@@ -1,0 +1,12 @@
+{
+  "name": "react-native-estudo",
+  "displayName": "react-native-estudo",
+  "expo": {
+    "name": "react-native-estudo",
+    "slug": "react-native-estudo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
