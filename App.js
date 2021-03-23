@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text>Olá mundo!</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+/*
+Os três metodos tem o mesmo retorno
+
+Alternativa 1 - Functionanl
+const App = function() {
+  return (
+    <View>
+      <Text>Olá mundo!</Text>
+    </View>
+  )
+}
+export default App;
+
+
+Alternativa 2 - Functional with Array Function 
+const App = () => (
+  <View>
+    <Text>Olá mundo!</Text>
+  </View>
+);
+export default App;
+ 
+Alternativa  3 - Class
+class App extends React.Component {
+  render() {
+    return (
+      <View>
+        <Text>Olá mundo!</Text>
+      </View>
+    );
+  }
+}
+export default App;
+
+*/
