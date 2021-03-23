@@ -17,7 +17,7 @@ export default class App extends React.Component {
     ]
   
     const pessoasText = pessoas.map(pessoa => (
-      <Text>{pessoa}</Text>
+      <Text key={pessoa}>{pessoa}</Text>
     ))
 
     return pessoasText;
