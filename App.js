@@ -1,15 +1,39 @@
 import React from 'react';
+import { render } from 'react-dom';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Header from './src/components/header'
 
-export default function App() {
-  return (
-    <View>
-      <Header title="Pessoas"/>
-      <Text>Olá mundo!</Text>
-    </View>
-  );
+export default class App extends React.Component {
+
+  //  Metodo criado para carregar e montar a lista
+  renderList() {
+    const pessoas =  [
+      'Leandro',
+      'Gustavo',
+      'Leonardo',
+      'Maria',
+      'Naruto'
+    ]
+  
+    const pessoasText = pessoas.map(pessoa => (
+      <Text>{pessoa}</Text>
+    ))
+
+    return pessoasText;
+  };
+
+  // SOMENTE O RENDER() É RECONHECIDO PELO REACT, PORTANTO, REACT EXECUTA AUTOMATICO SOMENTE O METODO RENDER() 
+  render() {
+    return (
+      <View>
+        <Header title="Pessoas"/>
+        <Text>Olá mundo!</Text>
+        {this.renderList()}
+      </View>
+    );
+  }
+
 }
 
 /*
