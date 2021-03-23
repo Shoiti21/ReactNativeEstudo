@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const Header = function() {
+const Header = function(props) {
     return (
       <View style={style.container}>
-        <Text style={style.text}>Titulo</Text>
+        <Text style={style.text}>{props.title}</Text>
       </View>
     )
 }
