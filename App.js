@@ -5,6 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
 
 import Header from './src/components/header'
+import PeopleList from './src/components/peopleList'
 
 export default class App extends React.Component {
 
@@ -30,35 +31,12 @@ export default class App extends React.Component {
       })
   }
 
-  //  Metodo criado para carregar e montar a lista
-  renderList() {
-    // const pessoas =  [
-    //   'Leandro',
-    //   'Gustavo',
-    //   'Leonardo',
-    //   'Maria',
-    //   'Naruto'
-    // ]
-  
-    // const pessoasText = pessoas.map(pessoa => (
-    //   <Text key={pessoa}>{pessoa}</Text>
-    // ))
-
-    const pessoasText = this.state.pessoas.map(pessoa => {
-      const first = pessoa.name.first  // const {first} = pessoa.name
-      return <Text key={first}>{first}</Text>;
-    })
-
-    return pessoasText;
-  };
-
   // SOMENTE O RENDER() É RECONHECIDO PELO REACT, PORTANTO, REACT EXECUTA AUTOMATICO SOMENTE O METODO RENDER() 
   render() {
     return (
       <View>
         <Header title="Pessoas"/>
-        <Text>Olá mundo!</Text>
-        {this.renderList()}
+        <PeopleList pessoas={this.state.pessoas}/>
       </View>
     );
   }
