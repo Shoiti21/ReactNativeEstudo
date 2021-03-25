@@ -7,7 +7,7 @@ const PeopleItem = function(props) {
     const last = pessoa.name.last
 
     return (
-        <View key={first} style={style.item}>
+        <View style={style.item}>
             <Image style={style.img} source={{ uri: pessoa.picture.thumbnail }}/>
             <Text style={style.text}>{`${first} ${last}`}</Text> 
         </View>

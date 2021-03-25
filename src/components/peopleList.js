@@ -6,8 +6,9 @@ import PeopleItem from './peopleItem'
 const PeopleList = function(props) {
     const pessoas = props.pessoas;
     const pessoasText = pessoas.map(pessoa => {
+        const first = pessoa.name.first
         return (
-            <PeopleItem pessoa={pessoa}/>
+            <PeopleItem key={first} pessoa={pessoa}/>
         );
     })
     
