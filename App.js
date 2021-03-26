@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import PeoplePage from './src/pages/peoplePage'
+import PeopleDetailsPage from './src/pages/peopleDetailsPage'
 
 const StackNavigator = createStackNavigator();
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <NavigationContainer>
       <StackNavigator.Navigator
+        initialRouteName="Pessoas"
         screenOptions={{
           headerStyle: {
             backgroundColor: 'blue',
@@ -21,6 +23,7 @@ function App() {
         }
       }>
         <StackNavigator.Screen name="Pessoas" component={PeoplePage}/>
+        <StackNavigator.Screen name="Detalhes" component={PeopleDetailsPage}/>
       </StackNavigator.Navigator>
     </NavigationContainer>
   );

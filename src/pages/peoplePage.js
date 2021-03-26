@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextPropTypes, View } from 'react-native';
 // Lib para fazer chamadas REST API
 import axios from 'axios';
 
@@ -36,7 +36,7 @@ export default class PeoplePage extends React.Component {
     return (
       <View>
         {/* <Header title="Pessoas"/> */}
-        <PeopleList pessoas={this.state.pessoas}/>
+        <PeopleList pessoas={this.state.pessoas} navigation={this.props.navigation}/>
       </View>
     );
   }

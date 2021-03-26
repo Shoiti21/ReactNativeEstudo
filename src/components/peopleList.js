@@ -8,7 +8,7 @@ const PeopleList = function(props) {
     const pessoasText = pessoas.map(pessoa => {
         const first = pessoa.name.first
         return (
-            <PeopleItem key={first} pessoa={pessoa}/>
+            <PeopleItem key={first} pessoa={pessoa} navigation={props.navigation}/>
         );
     })
     
