@@ -11,8 +11,16 @@ const StackNavigator = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <StackNavigator.Navigator>
-        <StackNavigator.Screen name="Pessoas" component={PeoplePage} />
+      <StackNavigator.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: '#fff',
+          headerTitleAlign: 'center'
+        }
+      }>
+        <StackNavigator.Screen name="Pessoas" component={PeoplePage}/>
       </StackNavigator.Navigator>
     </NavigationContainer>
   );
