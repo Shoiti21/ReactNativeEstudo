@@ -23,7 +23,17 @@ function App() {
         }
       }>
         <StackNavigator.Screen name="Pessoas" component={PeoplePage}/>
-        <StackNavigator.Screen name="Detalhes" component={PeopleDetailsPage}/>
+        <StackNavigator.Screen 
+          name="Detalhes" 
+          component={PeopleDetailsPage}
+          options={ ({route}) => {
+              const titleNav = route.params.pessoa.name.first;
+              return ({
+                title: titleNav
+              })
+            }
+          }
+        />
       </StackNavigator.Navigator>
     </NavigationContainer>
   );
