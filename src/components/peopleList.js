@@ -20,7 +20,7 @@ const PeopleList = function(props) {
             renderItem={({item}) => (
                 <PeopleItem pessoa={item} navigation={props.navigation}/>
             )}
-            keyExtractor={item => item.name.first}        
+            keyExtractor={item => item.name.first + item.name.last}        
         />
 
         // <View>
