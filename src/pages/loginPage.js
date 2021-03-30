@@ -62,7 +62,7 @@ export default class loginPage extends React.Component {
             })
             .catch( erro => {
                 this.setState({
-                    message: "E-mail/Senha incorreto"
+                    message: this.getMessageByFirebase(erro.code)
                 })
             }) 
             .then( result => {
@@ -70,6 +70,26 @@ export default class loginPage extends React.Component {
                     loading: false
                 })
             })
+    }
+
+    getMessageByFirebase(error) {
+        switch (error) {
+            case 'auth/invalid-email':
+                return 'Usuário não é valido'
+                break;
+            case 'auth/user-disabled':
+                return 'Usuário foi desativado'
+                break;           
+            case 'auth/user-not-found':
+                return 'Usuário não exite'
+                break;           
+            case 'auth/wrong-password':
+                return 'Senha inválida'
+                break;
+            default:
+                return 'Aconteceu um erro no aplicativo'
+                break;
+        }
     }
 
     componentDidMount() {
