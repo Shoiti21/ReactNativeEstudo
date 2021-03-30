@@ -55,16 +55,18 @@ export default class loginPage extends React.Component {
             .auth()
             .signInWithEmailAndPassword(this.state.login, this.state.password)
             .then( result => {
-                console.log('Sucesso! ' + result);
                 this.setState({
                     message: ""
                 })
                 this.props.navigation.navigate('Pessoas');
             })
             .catch( erro => {
-                console.log('Erro! ' + erro);
                 this.setState({
-                    message: "E-mail/Senha incorreto",
+                    message: "E-mail/Senha incorreto"
+                })
+            }) 
+            .then( result => {
+                this.setState({
                     loading: false
                 })
             })
