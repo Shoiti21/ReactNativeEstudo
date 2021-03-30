@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import loginPage from './src/pages/loginPage'
 import PeoplePage from './src/pages/peoplePage'
 import PeopleDetailsPage from './src/pages/peopleDetailsPage'
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <NavigationContainer>
       <StackNavigator.Navigator
-        initialRouteName="Pessoas"
+        initialRouteName="Login"
         screenOptions={{
           headerStyle: {
             backgroundColor: 'blue',
@@ -22,6 +23,7 @@ function App() {
           headerTitleAlign: 'center'
         }
       }>
+        <StackNavigator.Screen name="Login" component={loginPage}/>
         <StackNavigator.Screen name="Pessoas" component={PeoplePage}/>
         <StackNavigator.Screen 
           name="Detalhes" 
